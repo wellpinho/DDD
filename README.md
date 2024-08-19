@@ -1,64 +1,9 @@
 # DDD - Domain-Driven Design
 O DDD (Domain-Driven Design) é uma abordagem ao desenvolvimento de software que foca na modelagem do domínio de negócios central e na tradução desse modelo em código. Quando aplicamos DDD em uma aplicação Node.js, a estrutura de pastas reflete as camadas e os componentes do domínio, separando bem as responsabilidades.
 
-bash
-Copiar código
-/src
-│
-├── /application
-│   ├── /use-cases
-│   │   ├── CreateTaskUseCase.js
-│   │   ├── UpdateTaskUseCase.js
-│   │   └── CompleteTaskUseCase.js
-│   │
-│   ├── /dto
-│   │   └── TaskDTO.js
-│   │
-│   └── /interfaces
-│       ├── ITaskRepository.js
-│       └── ITaskService.js
-│
-├── /domain
-│   ├── /entities
-│   │   └── Task.js
-│   │
-│   ├── /repositories
-│   │   └── TaskRepository.js
-│   │
-│   └── /services
-│       └── TaskService.js
-│
-├── /infrastructure
-│   ├── /persistence
-│   │   ├── /mongodb
-│   │   │   └── MongoTaskRepository.js
-│   │   │
-│   │   ├── /postgres
-│   │   │   └── PostgresTaskRepository.js
-│   │   │
-│   │   └── /memory
-│   │       └── InMemoryTaskRepository.js
-│   │
-│   ├── /config
-│   │   └── dbConfig.js
-│   │
-│   ├── /http
-│   │   ├── /controllers
-│   │   │   └── TaskController.js
-│   │   │
-│   │   └── /routes
-│   │       └── taskRoutes.js
-│   │
-│   └── /log
-│       └── Logger.js
-│
-└── /shared
-    ├── /kernel
-    │   ├── AppError.js
-    │   └── Result.js
-    │
-    └── /utils
-        └── DateFormatter.js
+<img src="./ddd-structure.png" />
+
+
 ## Descrição das Pastas:
 /src: Diretório raiz que contém todo o código-fonte da aplicação.
 /application: Esta camada contém a lógica de aplicação, ou seja, o que a aplicação faz. Não deve conter regras de negócio, apenas orquestra a execução dos casos de uso.
